@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+input:focus{
+  outline: none;
+}
+/* HEADER */
+header {
+  margin-top: 15px;
+  margin-right: 5px;
+}
+header > div {
+  float: right;
+}
+header > div a {
+  margin-right:15px;
+  font-size: 14px;
+}
+header > div a:last-child:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+/* END-HEADER */
+
+/* MAIN */
+#main {
+  text-align: center;
+  margin-top: 11%;
+}
+#main .search{
+  position: relative;
+  width: 50%;
+  margin: 20px auto 30px;
+}
+#main .search input {
+  width: 100%;
+  border: 1px solid #dfe1e5;
+  border-radius: 30px;
+  padding: 13px 80px 13px 40px;
+  font-size: 16px;
+}
+
+#main .search input:focus,#main .search input:hover {
+  box-shadow: 0px 0px 5px rgba(0,0,0,.20);
+}
+#main .search span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#main .search span.iconSearch {
+  left: 2%;
+  color: #9aa0a6;
+}
+#main .search span.iconKeyboard {
+  right: 10%;
+  color: #7b7b7b;
+  cursor: pointer;
+}
+#main .search span.iconVoice {
+  right: 5%;
+  color: #4285f4;
+  cursor: pointer;
+}
+#main .btnSearch a {
+  font-weight: 100;
+  font-size: 15px;
+  margin-right: 10px;
+}
+#main .btnSearch a:hover {
+  border: 1px solid #dadce0;
+}
+#main .language {
+  font-size: 13px;
+  margin-top: 25px;
+}
+#main .language a {
+  color: #1a0dab;
+  margin: 0 3px 0;
+}
+#main .language a:hover, header > div a:hover, footer a:hover {
+  text-decoration: underline;
+}
+/* END-MAIN */
+
+/* FOOTER */
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  width: 100%;
+  font-size: 14px;
+}
+footer .item {
+  padding: 14px 30px;
+}
+footer, footer a {
+  color: #70757a;
+}
+footer a {
+  margin-right: 20px;
+}
+footer a:last-child {
+  margin-right: 0;
+}
+footer .leftLink {
+  float: left;
+}
+footer .rightLink {
+  float: right;
+}
+/* END-FOOTER */
+
+/* RESPONSIVE */
+@media (max-height: 680px) {
+  #main {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 501px) {
+  #main .search  {
+    width: 100%;
+  }
+}
