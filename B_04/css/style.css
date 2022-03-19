@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, #00c9c9, #00a1ca, #0077bf, #00489f, #480668);
+}
+ul {
+  list-style: none;
+}
+#main {
+  width: 809px;
+  margin: 0 auto;
+}
+footer {
+  padding: 17px 0px;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 13px;
+}
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer, footer ul li a {
+  color: #fff;
+}
