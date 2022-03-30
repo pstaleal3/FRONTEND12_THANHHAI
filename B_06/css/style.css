@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+#main, #main div.content {
+  transition: all 350ms ease-in-out;
+}
+#main {
+  margin:100px auto;
+  background: url('../images/6.jpg') 50% 50% / cover;
+  width: 480px;
+  height: 300px;
+  cursor: pointer;
+  position: relative;
+}
+#main div.overlay {
+  background: #2f4f23;
+  height: 100%;
+  opacity: 0.2;
+}
+#main:hover {
+  background-position-y: top;
+}
+
+#main div.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main div.content .line-x-top,#main div.content .line-x-bottom {
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  transition: all 200ms ease-in-out;
+}
+#main div.content .line-y-left,#main div.content .line-y-right {
+  display: block;
+  width: 1px;
+  height: 0;
+  background-color: #fff;
+  position: absolute;
+  transition: all 200ms ease-in-out;
+  transition-delay: 0.15s;
+}
+#main div.content .line-x-top {
+  top: 15%;
+  left: 10%;
+}
+#main div.content .line-x-bottom {
+  bottom: 15%;
+  left: 10%;
+}
+#main div.content .line-y-left {
+  top: 8%;
+  left:15%;
+}
+#main div.content .line-y-right {
+  top: 8%;
+  right: 15%;
+}
+
+#main:hover div.content .line-x-top,#main:hover div.content .line-x-bottom {
+  width: 80%;
+}
+#main:hover div.content .line-y-left,#main:hover div.content .line-y-right {
+  height: 84%;
+}
+#main:hover div.content {
+  background-color: rgba(0,0,0,.3);
+}
+#main div.content .text {
+  color: #fff;
+  width: 50%;
+}
+
+#main div.content .text h1 {
+  transform: translateY(-35px);
+  transition: all 400ms ease-in-out;
+}
+#main:hover div.content .text h1 {
+  transform: translateY(0px);
+}
+#main div.content .text p {
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  margin-top: 10px;
+}
+#main:hover div.content .text p {
+  opacity: 1;
+}
