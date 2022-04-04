@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* HEADER */
+#header-mogo {
+  background-image: url('../images/hero.png');
+  height: 1000px;
+  position: relative;
+  font-family:Montserrat;
+  z-index: 0;
+  color: #fff;
+}
+#header-mogo::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(231,129,130,0.9), rgba(241,149,124,0.9), rgba(244,170,122,0.9), rgba(243,192,126,0.9), rgba(238,215,137,0.9));
+  z-index: -1;
+}
+#header-mogo .header-top{
+  display: flex;
+  justify-content: space-between;
+}
+#header-mogo .header-top .logo, #header-mogo .header-top nav a,#header-mogo .header-top nav i {
+  color: #fff;
+}
+#header-mogo .header-top h1 {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+#header-mogo .header-top nav ul {
+  display: flex;
+  margin-top: 30px;
+}
+#header-mogo .header-top nav ul li {
+  font-size: 14px;
+  margin: 0px 25px;
+}
+#header-mogo .header-top nav ul li a{
+  position: relative;
+  transition: all 300ms;
+}
+#header-mogo .header-top nav ul li a:hover,#header-mogo .header-top nav ul li a:hover i{
+  color: #fce38a;
+}
+#header-mogo .header-top nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fce38a;
+  transition: 300ms;
+  opacity: 0;
+}
+#header-mogo .header-top nav ul li a:hover::before {
+  opacity: 1;
+}
+#header-mogo .header-content {
+  margin-top: 140px;
+  text-align: center;
+}
+#header-mogo .header-content h3 {
+  font:100 75px "Kaushan Script", cursive ;
+}
+#header-mogo .header-content h1 {
+  margin-top: 20px;
+  font:bold 150px/140px "Montserrat";
+}
+#header-mogo .header-content .short-line span {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  margin: 50px 0 45px;
+  background: white;
+}
+#header-mogo .header-bottom {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+#header-mogo .header-bottom ul {
+  width: 100%;
+}
+#header-mogo .header-bottom ul li {
+  margin-right: 30px;
+}
+#header-mogo .header-bottom ul li span.white-line {
+  display: inline-block;
+  height: 2px;
+  width: 100%;
+  background-color: #f7eac4;
+}
+#header-mogo .header-bottom ul:nth-child(1) span {
+  background-color: #fff;
+  position: relative;
+}
+#header-mogo .header-bottom ul:nth-child(1) span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 70px;
+  background-color: #f38181;
+}
+#header-mogo .header-bottom ul li:last-child {
+  margin: 20px 0;
+}
+/* END-HEADER */
+
+/* ABOUT-US */
+#about-us {
+  padding: 85px 0 100px;
+}
+#about-us .gallery {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+}
+
+#about-us .gallery a {
+  transition: all 350ms ease-in-out;
+  display: inline-block;
+  width: 100%;
+}
+#about-us .gallery > div {
+  background-color: #95e1d3;
+  margin-right: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+#about-us .gallery .detail {
+  transition: all 350ms;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-image: linear-gradient(to bottom, rgba(231,129,130,0.9), rgba(241,149,124,0.9), rgba(244,170,122,0.9), rgba(243,192,126,0.9), rgba(238,215,137,0.9));
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font:bold 18px Montserrat;
+  text-align: center;
+}
+
+#about-us .gallery > div:hover a {
+  transform: translate(-10px, -10px);
+}
+#about-us .gallery > div:hover .detail {
+  opacity: 1;
+}
+/* END-ABOUT-US */
+/* TOTAL */
+#total {
+  background: #95e1d3;
+}
+
+#total .item {
+  display: flex;
+  justify-content: space-between;
+}
+#total ul {
+  padding: 85px 0;
+  border-right: 1px solid #b5eae0;
+  width: 20%;
+  text-align: center;
+}
+#total ul:last-child {
+  border-right: none;
+}
+#total ul li.number {
+  font: bold 72px Montserrat;
+  color: #fff;
+}
+#total ul li:last-child {
+  color: #fff;
+  font: normal 14px Montserrat;
+}
+/* END-TOTAL */
+
+/* SERVICE */
+#service {
+  padding: 100px 0 60px;
+}
+#service .item {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e5e5e5;
+}
+#service .item:last-child {
+  border-bottom: none;
+}
+#service .item ul {
+  width: 33.33%;
+  display: flex;
+  margin: 50px 0;
+}
+#service .item ul li:first-child {
+  margin: 0 30px;
+}
+#service .item ul li:nth-child(2) h6 {
+  font: 500 14px Montserrat;
+  margin-bottom: 10px;
+  
+}
+#service .item ul li:nth-child(2) p {
+  font: normal 15px/24px Roboto;
+  color: #999999;
+} 
+/* END-SERVICE */
+
+/* DESIGN */
+#design {
+  background: #f1f1f1;
+  padding-top: 100px;
+}
+/* END-DESIGN */
+
