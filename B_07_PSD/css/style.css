@@ -12,7 +12,6 @@ ul {
 /* HEADER */
 #header-mogo {
   background-image: url('../images/hero.png');
-  height: 1000px;
   position: relative;
   font-family:Montserrat;
   z-index: 0;
@@ -87,7 +86,8 @@ ul {
   background: white;
 }
 #header-mogo .header-bottom {
-  margin-top: 150px;
+  margin-top: 148px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -230,8 +230,68 @@ ul {
 
 /* DESIGN */
 #design {
-  background: #f1f1f1;
+  background: url('../images/design_bg.png') 91% 31%;
   padding-top: 100px;
+  position: relative;
+  z-index: 0;
+}
+#design::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(239,239,239,0.9);
+  z-index: -1;
+} 
+#design .tablet {
+  position: relative;
+}
+#design .tablet .iphone {
+  position: absolute;
+  top: 37%;
+  left: 60%;
 }
 /* END-DESIGN */
 
+/* WHAT-WE-DO */
+#what-we-do {
+  padding-top: 105px;
+  padding-bottom: 120px;
+}
+#what-we-do .content {
+  display: flex;
+}
+#what-we-do .content .accordion {
+  margin-left: 30px;
+}
+#what-we-do .content .accordion .accordion-item {
+  margin-bottom: 9px;
+}
+#what-we-do .content .accordion .accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px 12px 15px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+#what-we-do .content .accordion .accordion-header li:nth-child(1) {
+  margin-right:15px;
+}
+#what-we-do .content .accordion .accordion-header li:nth-child(2) {
+  flex-grow: 1;
+  font: 600 14px Montserrat;
+}
+#what-we-do .content .accordion .accordion-body {
+  padding: 17px 50px 17px 20px;
+  font: italic 15px/24px Roboto;
+  color: #999999;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+}
+/* END-WHAT-WE-DO */
+
+#test {
+  padding: 100px;
+}
