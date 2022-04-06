@@ -137,6 +137,9 @@ ul {
   width: 100%;
   font-size: 0;
 }
+#about-us .gallery img {
+  max-width: 100%;
+}
 #about-us .gallery > div {
   background-color: #95e1d3;
   position: relative;
@@ -415,12 +418,17 @@ ul {
 #our-work .gallery {
   display: flex;
 }
+#our-work .gallery ul {
+  width: 25%;
+}
+#our-work .gallery ul img {
+  max-width: 100%;
+}
 #our-work .gallery a {
   display: block;
   font-size: 0;
   position: relative;
   overflow: hidden;
-  
 }
 #our-work .gallery a::before {
   content: '';
