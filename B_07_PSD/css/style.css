@@ -1,13 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-}
-ul {
-  list-style: none;
+html {
+  font-size: 62.5%;
 }
 /* HEADER */
 #header-mogo {
@@ -34,17 +26,17 @@ ul {
 }
 #header-mogo .header-top h1 {
   font-weight: bold;
-  font-size: 30px;
-  margin-top: 25px;
+  font-size: 3rem;
+  margin-top: 2.5rem;
   cursor: pointer;
 }
 #header-mogo .header-top nav ul {
   display: flex;
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 #header-mogo .header-top nav ul li {
-  font-size: 14px;
-  margin: 0px 25px;
+  font-size: 1.4rem;
+  margin: 0 2.5rem;
 }
 #header-mogo .header-top nav ul li a{
   position: relative;
@@ -68,26 +60,26 @@ ul {
   opacity: 1;
 }
 #header-mogo .header-content {
-  margin-top: 140px;
+  margin-top: 14rem;
   text-align: center;
 }
 #header-mogo .header-content h3 {
-  font:100 75px "Kaushan Script", cursive ;
+  font:100 7.5rem "Kaushan Script", cursive ;
 }
 #header-mogo .header-content h1 {
-  margin-top: 20px;
-  font:bold 150px/140px "Montserrat";
+  margin-top: 2rem;
+  font:bold 15rem/14rem "Montserrat";
 }
 #header-mogo .header-content .short-line span {
   display: inline-block;
-  width: 60px;
+  width: 6rem;
   height: 2px;
-  margin: 50px 0 45px;
+  margin: 5rem 0 4.5rem;
   background: white;
 }
 #header-mogo .header-bottom {
-  margin-top: 148px;
-  padding-bottom: 10px;
+  margin-top: 15rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -95,7 +87,7 @@ ul {
   width: 100%;
 }
 #header-mogo .header-bottom ul li {
-  margin-right: 30px;
+  margin-right: 3rem;
 }
 #header-mogo .header-bottom ul li span.white-line {
   display: inline-block;
@@ -113,22 +105,21 @@ ul {
   top: 0;
   left: 0;
   height: 2px;
-  width: 70px;
+  width: 7rem;
   background-color: #f38181;
 }
 #header-mogo .header-bottom ul li:last-child {
-  margin: 20px 0;
+  margin: 2rem 0;
 }
 /* END-HEADER */
 
 /* ABOUT-US */
 #about-us {
-  padding: 85px 0 100px;
+  padding: 8.5rem 0 10rem;
 }
 #about-us .gallery {
-  margin-top: 100px;
+  margin-top: 10rem;
   display: flex;
-  justify-content: space-between;
 }
 
 #about-us .gallery a {
@@ -137,16 +128,15 @@ ul {
   width: 100%;
   font-size: 0;
 }
-#about-us .gallery img {
-  max-width: 100%;
-}
 #about-us .gallery > div {
   background-color: #95e1d3;
   position: relative;
   cursor: pointer;
   font-size: 0;
 }
-
+#about-us .gallery > div:nth-child(2) {
+  margin: 0 3rem;
+}
 #about-us .gallery .detail {
   transition: all 350ms ease-in-out;
   position: absolute;
@@ -161,17 +151,17 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font:bold 18px Montserrat;
+  font:bold 1.8rem Montserrat;
   text-align: center;
 }
 
 #about-us .gallery > div:hover a {
-  transform: translate(-10px, -10px);
+  transform: translate(-1rem, -1rem);
 }
 #about-us .gallery > div:hover .detail {
   opacity: 1;
-  top: -10px;
-  left: -10px;
+  top: -1rem;
+  left: -1rem;
 }
 /* END-ABOUT-US */
 
@@ -182,10 +172,9 @@ ul {
 
 #total .item {
   display: flex;
-  justify-content: space-between;
 }
 #total ul {
-  padding: 85px 0;
+  padding: 8.5rem 0;
   border-right: 1px solid #b5eae0;
   width: 20%;
   text-align: center;
@@ -194,18 +183,18 @@ ul {
   border-right: none;
 }
 #total ul li.number {
-  font: bold 72px Montserrat;
+  font: bold 7.2rem Montserrat;
   color: #fff;
 }
 #total ul li:last-child {
   color: #fff;
-  font: normal 14px Montserrat;
+  font: normal 1.4rem Montserrat;
 }
 /* END-TOTAL */
 
 /* SERVICE */
 #service {
-  padding: 100px 0 60px;
+  padding: 10rem 0 6rem;
 }
 #service .item {
   display: flex;
@@ -218,18 +207,18 @@ ul {
 #service .item ul {
   width: 33.33%;
   display: flex;
-  margin: 50px 0;
+  margin: 5rem 0;
 }
 #service .item ul li:first-child {
-  margin: 0 30px;
+  margin: 0 3rem;
 }
 #service .item ul li:nth-child(2) h6 {
-  font: 500 14px Montserrat;
-  margin-bottom: 10px;
+  font: 500 1.4rem Montserrat;
+  margin-bottom: 1rem;
   
 }
 #service .item ul li:nth-child(2) p {
-  font: normal 15px/24px Roboto;
+  font: normal 1.5rem/2.4rem Roboto;
   color: #999999;
 } 
 /* END-SERVICE */
@@ -237,7 +226,7 @@ ul {
 /* DESIGN */
 #design {
   background: url('../images/design_bg.png') 91% 31%;
-  padding-top: 100px;
+  padding-top: 10rem;
   position: relative;
   z-index: 0;
 }
@@ -256,42 +245,46 @@ ul {
 }
 #design .tablet .iphone {
   position: absolute;
-  top: 37%;
-  left: 60%;
+  bottom: 0%;
+  right: 0%;
+  transform: translate(-20rem, 20%);
 }
 /* END-DESIGN */
 
 /* WHAT-WE-DO */
 #what-we-do {
-  padding-top: 105px;
-  padding-bottom: 120px;
+  padding-top: 10.5rem;
+  padding-bottom: 12rem;
 }
 #what-we-do .content {
   display: flex;
 }
+#what-we-do .content .accordion,#what-we-do .content > div:first-child {
+  width: 50%;
+} 
 #what-we-do .content .accordion {
-  margin-left: 30px;
+  margin-left: 3rem;
 }
 #what-we-do .content .accordion .accordion-item {
-  margin-bottom: 9px;
+  margin-bottom: 0.9rem;
 }
 #what-we-do .content .accordion .accordion-header {
   display: flex;
   align-items: center;
-  padding: 12px 20px 12px 15px;
+  padding: 1.2rem 2rem 1.2rem 1.5rem;
   border: 1px solid #e5e5e5;
   cursor: pointer;
 }
 #what-we-do .content .accordion .accordion-header li:nth-child(1) {
-  margin-right:15px;
+  margin-right:1.5rem;
 }
 #what-we-do .content .accordion .accordion-header li:nth-child(2) {
   flex-grow: 1;
-  font: 600 14px Montserrat;
+  font: 600 1.4rem Montserrat;
 }
 #what-we-do .content .accordion .accordion-body {
-  padding: 17px 50px 17px 20px;
-  font: italic 15px/24px Roboto;
+  padding: 1.7rem 5rem 1.7rem 2rem;
+  font: italic 1.5rem/2.4rem Roboto;
   color: #999999;
   border: 1px solid #e5e5e5;
   border-top: none;
@@ -301,39 +294,39 @@ ul {
 /* COMMENT-1 */
 #comment-1 {
   background-color: #f8f8f8;
-  padding: 70px 20px;
+  padding: 7rem 2rem;
 }
 #comment-1 ul {
   display: flex;
   align-items: center;
 }
 #comment-1 ul li.arrow-left {
-  margin-right: 75px;
+  margin-right: 7.5rem;
 }
 #comment-1 ul li.arrow-right {
-  margin-left: 70px;
+  margin-left: 7rem;
 }
 #comment-1 ul li.icon {
   border: 2px solid #95e1d3;
-  padding: 40px;
+  padding: 4rem;
 }
 #comment-1 ul li.content {
-  margin-left: 60px;
+  margin-left: 6rem;
 }
 #comment-1 ul li.content p{
-  font: italic 24px/36px Roboto;
+  font: italic 2.4rem/3.6rem Roboto;
   color: #999999;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 #comment-1 ul li.content .name {
-  font: 500 24px "Kaushan Script", cursive;
-  margin-left: 10px;
+  font: 500 2.4rem "Kaushan Script", cursive;
+  margin-left: 1rem;
 }
 /* END-COMMENT-1 */
 
 /* OUR-TEAM */
 #our-team {
-  padding: 100px 0 110px;
+  padding: 10rem 0 11rem;
 }
 #our-team .gallery {
   display: flex;
@@ -364,15 +357,15 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  font:bold 18px Montserrat;
+  font:bold 1.8rem Montserrat;
   text-align: center;
 }
 #our-team .gallery .social a {
-  font-size: 23px;
+  font-size: 2.3rem;
   color: #f38181;
   background-color: #fce38a;
   border-right: 1px solid #f38181;
-  padding: 14px 16px;
+  padding: 1.4rem 1.6rem;
   transition: all 350ms;
 }
 #our-team .gallery .social a:hover {
@@ -383,22 +376,22 @@ ul {
   border-right: none;
 }
 #our-team .gallery .item:hover > a {
-  transform: translate(-10px, -10px);
+  transform: translate(-1rem, -1rem);
 }
 #our-team .gallery .item:hover .social {
   opacity: 1;
-  top: -10px;
-  left: -10px;
+  top: -1rem;
+  left: -1rem;
 }
 #our-team .gallery .detail {
   text-align: center;
 }
 #our-team .gallery .detail .name{
-  margin:20px 0 8px;
+  margin:2rem 0 0.8rem;
   font: 600 14px Montserrat;
 }
 #our-team .gallery .detail .job {
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
   color: #999999;
 }
 /* END-OUR-TEAM */
@@ -412,7 +405,7 @@ ul {
 
 /* OUR-WORK */
 #our-work {
-  padding-top: 97px;
+  padding-top: 9.7rem;
   overflow: hidden;
 }
 #our-work .gallery {
@@ -467,11 +460,11 @@ ul {
   opacity: 0;
 }
 #our-work .gallery .detail h3 {
-  font:600 14px Montserrat;
-  margin: 13px 0 10px;
+  font:600 1.4rem Montserrat;
+  margin: 1.3rem 0 1rem;
 }
 #our-work .gallery .detail p {
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
 }
 #our-work .gallery li:hover .detail {
   opacity: 1;
@@ -480,39 +473,37 @@ ul {
 
 /* TESTIMONIAL */
 #testimonial {
-  padding: 100px 20px 120px;
+  padding: 10rem 2rem 12rem;
 }
 #testimonial ul {
   display: flex;
   align-items: center;
 }
 #testimonial ul li.arrow-left {
-  margin-right: 75px;
+  margin-right: 7.5rem;
 }
 #testimonial ul li.arrow-right {
-  margin-left: 70px;
+  margin-left: 7rem;
 }
-#testimonial ul li.avatar {
 
-}
 #testimonial ul li.content {
-  margin-left: 60px;
+  margin-left: 6rem;
 }
 #testimonial ul li.content p{
-  font: italic 24px/36px Roboto;
+  font: italic 2.4rem/3.6rem Roboto;
   color: #999999;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 #testimonial ul li.content .name {
-  font: 500 24px "Kaushan Script", cursive;
-  margin-left: 10px;
+  font: 500 2.4rem "Kaushan Script", cursive;
+  margin-left: 1rem;
 }
 /* END-TESTIMONIAL */
 
 /* CLIENTS */
 #clients {
   background-color: #f5f5f5;
-  padding: 100px 0 70px;
+  padding: 10rem 0 7rem;
   background-image: url('../images/clients/clients.png');
   position: relative;
   z-index: 0;
@@ -528,8 +519,8 @@ ul {
   z-index: -1;
 } 
 #clients .content {
-  margin-top: 90px;
-  padding: 0 45px;
+  margin-top: 9rem;
+  padding: 0 4.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -537,38 +528,38 @@ ul {
 #clients .content ul {
   width: 46%;
   display: flex;
-  margin-bottom: 55px;
+  margin-bottom: 5.5rem;
 }
 #clients .content .avatar {
-  margin-right: 30px;
+  margin-right: 3rem;
 }
 #clients .content .info h3 {
-  font: 600 14px Montserrat;
-  margin-bottom: 8px;
+  font: 600 1.4rem Montserrat;
+  margin-bottom: 0.8rem;
 }
 #clients .content .info span {
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
 }
 #clients .content .info div {
-  margin-bottom: 10px;
-  margin-top: 3px;
+  margin-bottom: 1rem;
+  margin-top: 0.3rem;
 }
 #clients .content .info p {
-  font: 15px/24px Roboto;
+  font: 1.5rem/2.4rem Roboto;
   color: #999999;
 }
 /* END-CLIENTS */
 
 /* BLOG */
 #blog {
-  padding: 99px 0px;
+  padding: 9.9rem 0;
 }
 #blog .content {
   display: flex;
-  margin-top: 45px;
+  margin-top: 4.5rem;
 }
-#blog .content .item {
-  margin-right: 30px;
+#blog .content .item:nth-child(2) {
+  margin:0 3rem;
 }
 #blog .content .item .thumbnail {
   position: relative;
@@ -578,11 +569,11 @@ ul {
 }
 #blog .content .item .calender {
   background: #95e1d3;
-  padding: 9px 15px;
+  padding: 0.9rem 1.5rem;
   color: #fff;
   position: absolute;
-  bottom: 10px;
-  left: -10px;
+  bottom: 1rem;
+  left: -1rem;
 }
 #blog .content .item .calender .day {
   font-weight: bolder;
@@ -592,30 +583,30 @@ ul {
   text-align: left;
 }
 #blog .content .item .caption h3 {
-  font: 500 14px Montserrat;
+  font: 500 1.4rem Montserrat;
 }
 #blog .content .item .caption p {
-  font:15px/24px Roboto;
+  font:1.5rem/2.4rem Roboto;
   color: #999999;
-  margin: 10px 0 15px;
+  margin: 1rem 0 1.5rem;
 }
 #blog .content .item hr {
   height: 1px;
   background-color: #e5e5e5;
   border: none;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 #blog .content .item .interact,#blog .content .item .interact ul {
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  margin-right: 1.5rem;
 }
 #blog .content .item .interact ul li.icon a{
   color: #95e1d3;
-  margin-right: 8px;
+  margin-right: 0.8rem;
 }
 #blog .content .item .interact ul li.number {
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
   color: #999999;
 }
 /* END-BLOG */
@@ -623,7 +614,7 @@ ul {
 /* MAP */
 #map {
   background: url('../images/map/map.png') 0% 41% no-repeat;
-  padding: 51px 0;
+  padding: 5.1rem 0;
   position: relative;
   z-index: 1;
 }
@@ -638,9 +629,9 @@ ul {
   z-index: -1;
 } 
 #map .content h3 {
-  font: bold 24px Montserrat;
+  font: bold 2.4rem Montserrat;
   color: #f38181;
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 /* END-MAP */
 
@@ -650,34 +641,39 @@ ul {
 }
 #footer-mogo .main {
   display: flex;
-  padding: 67px 0px;
+  padding: 6.7rem 0;
 }
 #footer-mogo .main .social {
-  margin-right: 40px;
-  width: 40%;
+  margin-right: 4rem;
+  width: 38%;
+}
+
+#footer-mogo .main .gallery {
+  width: 62%;
+  display: flex;
 }
 #footer-mogo .main .blogs {
-  width: 35%;
+ width: 100%;
 }
 #footer-mogo .main .instagram {
-  margin-left: 60px;
-  width: 25%;
+  margin-left: 6rem;
+  
 }
 #footer-mogo .main .social .logo {
-  font: bold 46px Montserrat;
+  font: bold 4.6rem Montserrat;
   color: #ccc;
 }
 #footer-mogo .main .social p {
-  font: 15px/24px Roboto;
+  font: 1.5rem/2.4rem Roboto;
   color: #999;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 #footer-mogo .main .social .follow-number {
   font-family: Montserrat;
 }
 #footer-mogo .main .social hr {
-  margin: 10px 0;
+  margin: 1rem 0;
   height: 1px;
   background-color: #e5e5e5;
   border: none;
@@ -685,25 +681,25 @@ ul {
 #footer-mogo .main .social .follow-us {
   display: flex;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 3.5rem;
 }
 #footer-mogo .main .social .follow-us li:first-child {
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
   color: #999;
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 #footer-mogo .main .social .follow-us li.icon a{
-  margin-right: 20px;
+  margin-right: 2rem;
   color: #95e1d3;
 }
 #footer-mogo .main .social .subcribe .form-group {
   display: flex;
 }
 #footer-mogo .main .social .subcribe input{
-  font: italic 15px/24px Roboto;
+  font: italic 1.5rem/2.4rem Roboto;
   border: 1px solid #e7e7e7;
   outline: none;
-  padding:7px 20px;
+  padding:0.7rem 2rem;
   display: inline-block;
   width: 100%;
 }
@@ -713,51 +709,123 @@ ul {
 #footer-mogo .main .social .subcribe button {
   background-color: #95e1d3;
   color: #fff;
-  padding: 0px 31px;
-  font: bold 14px Montserrat;
+  padding: 0 3.1rem;
+  font: bold 1.4rem Montserrat;
+  cursor: pointer;
+  transition: all 300ms;
+  border: none;
+}
+#footer-mogo .main .social .subcribe button:hover {
+  background-color: #000;
+  color: #95e1d3;
 }
 #footer-mogo .main .blogs h3, #footer-mogo .main .instagram h3{
-  font:500 14px Montserrat;
-  margin-bottom: 35px;
+  font:500 1.4rem Montserrat;
+  margin-bottom: 3.5rem;
   color: #333333;
 }
 #footer-mogo .main .blogs .media {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 }
 #footer-mogo .main .blogs .media .detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 #footer-mogo .main .blogs .media p {
-  font:12px/18px Montserrat;
+  font:1.2rem/1.8rem Montserrat;
   color: #333333;
   text-transform: uppercase;
 }
 #footer-mogo .main .blogs .media .time {
-  font: italic 13px/24px Roboto;
+  font: italic 1.3rem/2.4rem Roboto;
   color: #999999;
 }
-#footer-mogo .main .instagram .gallery {
+#footer-mogo .main .instagram {
+  width: 78%;
+}
+#footer-mogo .main .instagram .picture {
   display: flex;
   flex-wrap: wrap;
+  font-size: 0;
 }
-#footer-mogo .main .instagram .gallery li {
-  width: calc(100%/3);
+#footer-mogo .main .instagram .picture li {
+  width: calc(33.33% - 0.8rem);
+  margin-right: 1px;
+  margin-bottom: 1px;
 }
-#footer-mogo .main .instagram .gallery li a {
+#footer-mogo .main .instagram .picture li a {
   display: inline-block;
 }
 #footer-mogo .main .instagram  p {
-  font: italic 13px/24px Roboto;
+  font: italic 1.3rem/2.4rem Roboto;
   color: #999;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 #footer-mogo .copyright {
   border-top: 1px solid #e5e5e5;
-  padding: 20px 0px;
-  font: 14px Montserrat;
+  padding: 2rem 0;
+  font: 1.4rem Montserrat;
 }
 /* END-FOOTER */
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  .container {
+    max-width: 720px;
+  }
+  #design .tablet .iphone {
+    transform: translate(1rem, 20%);
+  }
+  #what-we-do .content .accordion .accordion-body {
+    padding: 1.7rem 2rem;
+    height: 15rem;
+    overflow: auto;
+  }
+  #clients .content ul {
+    width: 100%;
+    align-items: center;
+  }
+  #footer-mogo .main {
+    flex-direction: column;
+  }
+  #footer-mogo .main .social,#footer-mogo .main .gallery {
+    width: 100%;
+  }
+  #footer-mogo .main .gallery {
+    margin-top: 20px;
+  }
+  #footer-mogo .main .gallery .blogs {
+    width: 60%;
+  }
+  #footer-mogo .main .gallery .instagram {
+    width: 40%;
+  }
+  #footer-mogo .main .gallery img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 35%;
+  }
+  .container {
+    max-width: 540px;
+  }
+  #about-us .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about-us .gallery > div.item {
+    margin-bottom: 2rem;
+  }
+  #testimonial ul li.avatar img{
+    max-width: 100%;
+  }
+}
+
