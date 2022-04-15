@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>B_09</title>
+</head>
+<body>
+    <section>
+        <div class="media">
+            <img src="./images/background.jpg" alt="background" onerror="imgError(this)"; />
+            <div class="media-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa reiciendis eligendi temporibus sequi, dicta eum similique vitae alias repellendus.
+            </div>
+        </div>
+        <div class="media">
+            <img src="./images/aaa" alt="serious" onerror="imgError(this)"; >
+            <div class="media-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa reiciendis eligendi temporibus sequi, dicta eum similique vitae alias repellendus.
+            </div>
+        </div>
+        <div class="media">
+            <img src="./images/ccc" alt="yaoming" onerror="imgError(this)";>
+            <div class="media-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa reiciendis eligendi temporibus sequi, dicta eum similique vitae alias repellendus.
+            </div>
+        </div>
+        <div class="media">
+            <img src="  " alt="img-not-found" onerror="imgError(this)";>
+            <div class="media-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa reiciendis eligendi temporibus sequi, dicta eum similique vitae alias repellendus.
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    let errorImgSrc = './images/img-not-found.jpg';
+    function imgError(image) {
+        image.src = errorImgSrc;
+    }
+
+    window.onload = function() {
+        let img = document.querySelectorAll('img');
+        img.forEach(element => {
+            let source = element.getAttribute('src').trim();
+            if(source == '') element.setAttribute('src',errorImgSrc);
+        });
+    };
+</script>
+</html>

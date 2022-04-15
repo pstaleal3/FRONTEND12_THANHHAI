@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B_08</title>
+</head>
+<style>
+    body {
+        font:72px Arial;
+    }
+</style>
+<body>
+   
+</body>
+<script>
+    let row = 11;
+    let column = 7;
+    let symbol = '--';
+    let str = '';
+    for (let i = 0; i <= column; i++) {
+        for (let j = i; j < row; j++) {
+            str += j+symbol; 
+        }
+        // str = str.slice(0, -1);
+        str = str.replace(/\D+$/,'');
+        str += '<br >';
+    }
+    document.write(str);
+</script>
+</html>

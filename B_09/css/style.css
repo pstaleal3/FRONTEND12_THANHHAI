@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 275px;
+}
+section, div.media {
+  display: flex;
+}
+section {
+  flex-wrap: wrap;
+  margin: 15px 20px;
+}
+
+section div.media {
+  width: calc(50% - 5px);
+  border: 1px solid #ccc;
+  padding: 10px;
+  align-items: center;
+  margin:0 5px 5px 0;
+}
+section div.media div.media-body {
+  margin-left: 20px;
+}
