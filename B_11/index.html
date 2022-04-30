@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter keyword ..." />
+                            <input type="text" class="form-control" placeholder="Enter keyword ..." id="search" />
                             <button class="btn btn-outline-info" type="button" id="btn-search">Go!</button>
                         </div>
                     </div>
@@ -33,17 +33,17 @@
                                 data-mdb-toggle="dropdown" aria-expanded="false">
                                 Sort by
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filter">
                                 <li><button class="dropdown-item" type="button">Name - ASC</button></li>
                                 <li><button class="dropdown-item" type="button">Name - DESC</button></li>
                                 <li><button class="dropdown-item" type="button">Level - ASC</button></li>
                                 <li><button class="dropdown-item" type="button">Level - DESC</button></li>
                             </ul>
                         </div>
-                        <h4 class="mb-0"><span class="badge bg-success">NAME - ASC</span></h2>
+                        <h4 class="mb-0"><span class="badge bg-success" id="filter-status">NAME - ASC</span></h2>
                     </div>
                     <div class="col-5">
-                        <button type="button" class="btn btn-info btn-block">Add Task</button>
+                        <button type="button" class="btn btn-info btn-block" id="add-task">Add Task</button>
                     </div>
                 </div>
                 <!-- CONTROL : END -->
@@ -59,7 +59,8 @@
                                 <option value="2">High</option>
                             </select>
                             <button type="button" class="btn btn-primary btn-sm me-1" data-mdb-ripple-unbound="true" id="btn-submit">Submit</button>
-                            <button type="button" class="btn btn-danger btn-sm" data-mdb-ripple-unbound="true">Cancel</button>
+                            <button type="button" class="btn btn-success btn-sm me-1" data-mdb-ripple-unbound="true" id="btn-edit" onclick="editTask()">Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-mdb-ripple-unbound="true" id="cancel">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -117,6 +118,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="js/mdb.min.js"></script>
+    <script src="js/notify.min.js"></script>
+    <script src="js/define.js"></script>
+    <script src="js/libs.js"></script>
     <script src="js/main.js"></script>
 </body>
 
