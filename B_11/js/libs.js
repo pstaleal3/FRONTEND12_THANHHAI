@@ -7,9 +7,9 @@ function addLocalStorage(name,level) {
     name : name,
     level : level,
   };
-  task.push(objTask);
+  task.unshift(objTask);
   localStorage.setItem(TASK, JSON.stringify(task));
-  showTask(task);
+  pagination(task);
   $.notify('Add Success!',{ className: "success" });
 }
 function getLocalStorage(task) {
@@ -67,7 +67,8 @@ function editTask() {
   localStorage.setItem(TASK, JSON.stringify(arrTask));
   $('#btn-submit').css("display", "block");
   $('#btn-edit').css("display", "none");
-  showTask(arrTask);
+  let pageNumber = $('#currentPage').val();
+  pagination(arrTask,pageNumber);
   clear();
   $.notify('Edit Success!',{ className: "success" });
 }
@@ -77,7 +78,8 @@ function deleteTask(id) {
     if(id == value['id']) arrTask.splice(index,1);
   });
   localStorage.setItem(TASK, JSON.stringify(arrTask));
-  showTask(arrTask);
+  let pageNumber = $('#currentPage').val();
+  pagination(arrTask,pageNumber);
   $.notify('Delete Success!',{ className: "success" });
 }
 
@@ -96,7 +98,7 @@ function searchTask(string) {
   let arrTask = JSON.parse(localStorage.getItem(TASK));
   let results = arrTask.filter(value => value['name'].indexOf(string) != -1);
   results = results.filter(value =>value['name'] = value['name'].replaceAll(string,`<span class="red">${string}</span>`));
-  showTask(results);
+  pagination(results);
 }
 function showTask(array) {
   let task = '';
@@ -123,5 +125,23 @@ function filter(text) {
   let arrTask = JSON.parse(localStorage.getItem(TASK));
   if(orderBy == 'asc') arrTask.sort((a,b)=> (a[column] > b[column] ? 1 : -1));
   else arrTask.sort((a,b)=> (a[column] < b[column] ? 1 : -1));
-  showTask(arrTask);
+  let pageNumber = $('#currentPage').val();
+  pagination(arrTask,pageNumber);
 }
+function pagination(data = [],pageNumber = 1){
+  if(data.length == 0) {
+    data = JSON.parse(localStorage.getItem(TASK));
+  }
+  $('#pagination').pagination({
+    dataSource: data,
+    pageSize: PAGESIZE,
+    showNavigator: true,
+    formatNavigator: '<input type="hidden" value=<%= currentPage %> id="currentPage" />',
+    className: 'paginationjs-theme-green',
+    pageNumber: pageNumber,
+    callback: function(data, pagination) {
+      showTask(data);
+    }
+  })
+}
+

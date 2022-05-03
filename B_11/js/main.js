@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  pagination();
   $('ul#filter li ').click(function(e) {
     $('#filter-status').text($(this).text());
     filter($(this).text());
@@ -12,7 +13,7 @@ $(document).ready(function () {
   $('#search').keyup(function(e) {
     searchTask($(this).val());
   });
-  getLocalStorage('task');
+  
   $('#btn-submit').click(function (e) { 
     e.preventDefault();
     let taskName = $('#input-name').val();
@@ -28,3 +29,4 @@ $(document).ready(function () {
     }
   });
 });
+
