@@ -26,7 +26,7 @@ ul {
   height: 60px;
   font-size: 20px;
   margin-bottom: 10px;
-
+  cursor: pointer;
 }
 .clearfix::after {
   content: "";
@@ -120,11 +120,19 @@ ul {
   cursor: pointer;
   transition: all 300ms;
 }
-.btn-outline-dark:hover {
+.btn-outline-dark:hover, .btn-warning:hover {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
 }
 .black {
   color: #000;
+}
+.red {
+  color: red;
+}
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.4;
 }

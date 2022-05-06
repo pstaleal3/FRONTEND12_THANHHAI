@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  
+  <link rel="stylesheet" href="./css/fontawesome-free-5.15.4-web/css/all.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <link rel="stylesheet" href="./css/library.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/fontawesome-free-5.15.4-web/css/all.min.css">
   <title>Guess Number</title>
+  
 </head>
 <body>
   <div class="container">
@@ -23,12 +26,23 @@
         <nav>
           <ul>
             <li>
-              <a href="#" class="btn-primary">Luật Chơi
+              <div id="tutorial" class="modal">
+                <p style="font-size: 39px">
+                  1. Game là dễ <br />
+                  2. Chơi là biết <br />
+                  3. Không cần hướng dẫn <br />
+              </div>
+              <a href="#tutorial" rel="modal:open" class="btn-primary">Luật Chơi
                 <i class="fas fa-balance-scale fa-lg float-right"></i>
               </a>
             </li>
             <li>
-              <a href="#" class="btn-warning">Điểm Cao
+              <div id="high-score" class="modal">
+                <table>
+                  
+                </table>
+              </div>
+              <a href="#high-score" rel="modal:open" class="btn-warning">Điểm Cao
                 <i class="fas fa-trophy fa-lg float-right"></i>
               </a>
             </li>
@@ -54,10 +68,10 @@
         <hr color="#343a40">
         <div class="tool">
           <ul>
-            <li><a href="#"><i class="fas fa-star"></i></a></li>
-            <li><a href="#"><i class="fas fa-redo"></i></a></li>
-            <li><a href="#"><i class="fas fa-user"></i></a></li>
-            <li><a href="#"><i class="fas fa-search-plus"></i></a></li>
+            <li><a href="#" title="Gợi ý" onClick="showHintRange(this)"><i class="fas fa-star"></i></a></li>
+            <li><a href="#" title="Chơi lại" id="play-again"><i class="fas fa-redo"></i></a></li>
+            <li><a href="#"><i class="fas fa-save"></i></a></li>
+            <li><a href="#" title="Phóng to"><i class="fas fa-search-plus"></i></a></li>
           </ul>
         </div>
       </section>
@@ -72,32 +86,7 @@
         </div>
         <hr color="#343a40">
         <div class="list-items">
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          <button class="btn btn-outline-dark">10</button>
-          
+          <!-- <button class="btn btn-outline-dark">10</button> -->
         </div>
       </section>
       <section id="right-content">
@@ -105,34 +94,28 @@
           <p>Số lần dự đoán của bạn:&nbsp&nbsp
             <span class="life">
               <i class="fas fa-heart"></i>
-              <i class="fas fa-heart-broken black"></i>
+              <i class="fas fa-heart"></i>
               <i class="fas fa-heart"></i>
               <i class="fas fa-heart"></i>
             </span>
           </p>
         </div>
-        <div class="hint-message">
-          <a href="#" class="btn-danger">Sai rồi!</a><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, omnis!</p>
-        </div>
-        <div class="hint-message">
-          <a href="#" class="btn-danger">Sai rồi!</a><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, omnis!</p>
-        </div>
-        <div class="hint-message">
-          <a href="#" class="btn-danger">Sai rồi!</a><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, omnis!</p>
+        <div id="all-hint-message">
+          
         </div>
         <div class="secret-number">
-          <h1>Số Bí Mật</h1>
-          <a href="#" class="btn-danger">20</a>
+          
         </div>
       </section>
     </section>
   </div>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="./js/define.js"></script>
+<script src="./js/libs.js"></script>
 <script src="./js/main.js"></script>
-
 </body>
 </html>
