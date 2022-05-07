@@ -24,6 +24,7 @@ function clickNumber(number) {
     $(number).addClass("btn-success").removeClass("btn-outline-dark btn-warning");
     $('.list-items').addClass('disabled');
     $('.tool ul li:first-child a').addClass('disabled');
+    $('.tool ul li:nth-child(3) a').addClass('disabled');
     setTimeout(() => {
       alert('Bạn thắng!');
       let name = prompt("Nhập tên của bạn:", "Phờloren");
@@ -44,6 +45,7 @@ function clickNumber(number) {
     setTimeout(() => alert('Thua'), 350);
     $('.list-items').addClass('disabled');
     $('.tool ul li:first-child a').addClass('disabled');
+    $('.tool ul li:nth-child(3) a').addClass('disabled');
   }
 }
 function getRandomIntInclusive(min, max) {
