@@ -16,11 +16,14 @@ function showNumber(level = 1) {
 }
 
 function clickNumber(number) {
+  data = JSON.parse(localStorage.getItem('setting'));
   $(number).css('border','none');
   history($(number).text());
   showHintMessage(secretNumber,$(number).text());
   if($(number).data('secret')) {
     $(number).addClass("btn-success").removeClass("btn-outline-dark btn-warning");
+    $('.list-items').addClass('disabled');
+    $('.tool ul li:first-child a').addClass('disabled');
     setTimeout(() => {
       alert('Bạn thắng!');
       let name = prompt("Nhập tên của bạn:", "Phờloren");
@@ -33,12 +36,14 @@ function clickNumber(number) {
     $(number).addClass("btn-danger").removeClass("btn-outline-dark btn-warning");
     reduceLife();
     life--;
-    btnDanger.push(parseInt($(number).text()));
-    saveData(secretNumber,data.level,life,btnDanger,btnWarning,hintMessage);
+    objSaveGame['btnDanger'].push(parseInt($(number).text()));
+    saveData(secretNumber,data.level,life,objSaveGame);
   }
   if(life == 0) {
     showSecretNumber();
     setTimeout(() => alert('Thua'), 350);
+    $('.list-items').addClass('disabled');
+    $('.tool ul li:first-child a').addClass('disabled');
   }
 }
 function getRandomIntInclusive(min, max) {
@@ -49,7 +54,7 @@ function getRandomIntInclusive(min, max) {
 function history(value) {
   $('.history div input:last-child').remove();
   $('.history div').prepend(`<input type="text" disabled="" class="form-control" value="${value}">`);
-  historyNumber.push(value);
+  objSaveGame['historyNumber'].push(value);
 }
 function reduceLife() {
   $('.life i:last-child').remove();
@@ -92,14 +97,16 @@ function showLeaderBoard() {
   }
   $('#high-score table').html(xhtml);
 }
-function saveData(secretNumber,level = 1,life = 4,btnDanger = [],btnWarning = [],hintMessage = []) {
+function saveData(secretNumber,level = 1,life = 4,objSaveGame) {
+  if(lifeTime < 10) return;
   let data = {
     secretNumber: secretNumber,
     level : level,
     life : life,
-    btnDanger: btnDanger,
-    btnWarning: btnWarning,
-    hintMessage: hintMessage
+    btnDanger: objSaveGame['btnDanger'],
+    btnWarning: objSaveGame['btnWarning'],
+    hintMessage: objSaveGame['hintMessage'],
+    historyNumber: objSaveGame['historyNumber']
   };
   localStorage.setItem('setting',JSON.stringify(data));
 }
@@ -121,7 +128,7 @@ function hint(secretNum,level) {
   secondNum = secretNum + secondNum;
   $('button[data-secret]').each(function(index,value) {
     if (index + 1 >= firstNum && index + 1 <=secondNum) {
-      btnWarning.push(index + 1);
+      objSaveGame['btnWarning'].push(index + 1);
       setTimeout(() => {
         $(value).removeClass('btn-outline-dark').addClass('btn-warning');
         $(value).css('border','none');
@@ -133,7 +140,8 @@ function showHintRange(e) {
   let data = JSON.parse(localStorage.getItem('setting'));
   hint(secretNumber,data['level']);
   $(e).addClass('disabled');
-  saveData(secretNumber,data.level,life,btnDanger,btnWarning,hintMessage);
+  saveData(secretNumber,data.level,life,objSaveGame);
+  $.notify("Gợi ý!", "success");
 }
 function showHintMessage(secretNumber,ClickNumber){
   let message = '';
@@ -147,8 +155,8 @@ function showHintMessage(secretNumber,ClickNumber){
                 <p>${message}</p>
               </div>`;
   $('#all-hint-message').append(xhtml);
-  hintMessage.push(message);
-  saveData(secretNumber,data.level,life,btnDanger,btnWarning,hintMessage);
+  objSaveGame['hintMessage'].push(message);
+  saveData(secretNumber,data.level,life,objSaveGame);
 }
 function showSecretNumber(){
   let xhtml = `<h1>Số Bí Mật</h1>
@@ -163,7 +171,14 @@ function reset(){
     $('.life').append('<i class="fas fa-heart">&nbsp</i>');
     $('.history .form-group').append('<input type="text" disabled="" class="form-control">');
   }
+  $('.list-items').removeClass('disabled');
   $('#all-hint-message').html('');
   $('.secret-number').html('');
-
+  $('.tool ul li a:first-child').removeClass('disabled');
+  objSaveGame = {
+    btnDanger: [],
+    btnWarning: [],
+    hintMessage: [],
+    historyNumber: []
+  };
 }
