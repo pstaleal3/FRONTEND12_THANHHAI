@@ -19,6 +19,8 @@ $(document).ready(function() {
     $(this).addClass('disabled');
     setTimeout(() => {$(this).removeClass('disabled')}, 10000);
     localStorage.setItem('saveTime', Date.now());
-    
   });
+  for(let i = 1; i <= 4; i++) {
+    contextLoader.addLoader('.load-message-'+i);
+  }
 });

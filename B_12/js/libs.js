@@ -149,14 +149,18 @@ function showHintMessage(secretNumber,ClickNumber){
   let message = '';
   if (ClickNumber > secretNumber) {
     message = 'Số bạn chọn lớn hơn số bí mật';
-  } else {
+  } else if (ClickNumber < secretNumber){
     message = 'Số bạn chọn nhỏ hơn số bí mật';
+  } else {
+    return;
   }
   let xhtml = `<div class="hint-message">
                 <a href="#" class="btn-danger">Sai rồi!</a><br />
                 <p>${message}</p>
               </div>`;
-  $('#all-hint-message').append(xhtml);
+
+  $('#all-hint-message .content-load:last-child').remove();
+  $('#all-hint-message').prepend(xhtml);
   objSaveGame['hintMessage'].push(message);
   saveData(secretNumber,data.level,life,objSaveGame);
 }
@@ -174,7 +178,15 @@ function reset(){
     $('.history .form-group').append('<input type="text" disabled="" class="form-control">');
   }
   $('.list-items').removeClass('disabled');
-  $('#all-hint-message').html('');
+  $('#all-hint-message').html(`
+    <div class="load-message-1 content-load"></div>
+    <div class="load-message-2 content-load"></div>
+    <div class="load-message-3 content-load"></div>
+    <div class="load-message-4 content-load"></div>
+  `);
+  for(let i = 1; i <= 4; i++) {
+    contextLoader.addLoader('.load-message-'+i);
+  }
   $('.secret-number').html('');
   $('.tool ul li a:first-child').removeClass('disabled');
   objSaveGame = {
