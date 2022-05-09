@@ -1,13 +1,14 @@
 $(document).ready(function() {
-  showNumber();
+  showNumber(level,objSaveGame);
   showLeaderBoard();
+  loadSaveGame();
   saveData(secretNumber,1,life,objSaveGame);
   $( document ).tooltip();
   $('.slt-level').select2({ 
     width: '100%',
     minimumResultsForSearch: -1 
   }).on('change', function() {
-    showNumber($(this).val());
+    showNumber($(this).val(),objSaveGame);
     reset();
     saveData(secretNumber,$(this).val(),life,objSaveGame);
   });

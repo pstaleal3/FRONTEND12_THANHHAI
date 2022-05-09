@@ -1,4 +1,4 @@
-function showNumber(level = 1) {
+function showNumber(level = 1,objSaveGame) {
   $('.list-items').html('');
   let maxNumber;
   if(level == 1) maxNumber = 25;
@@ -6,9 +6,22 @@ function showNumber(level = 1) {
   else maxNumber = 100; 
   secretNumber = getRandomIntInclusive(1,maxNumber);
   let secretData;
+  let classButton;
   for(let i = 1; i <= maxNumber; i++) {
     secretData = (secretNumber == i) ? true : false;
-    let btnNumber = `<button data-secret="${secretData}" class="btn btn-outline-dark" onClick="clickNumber(this)">${i}</button>`;
+    classButton = 'btn btn-outline-dark';
+    if(objSaveGame['btnWarning'].length > 0) {
+      if(objSaveGame['btnWarning'].includes(i)) {
+        classButton = 'btn btn-warning';
+      }
+    }
+    if (objSaveGame['btnDanger'].length > 0) {
+      if(objSaveGame['btnDanger'].includes(i)) {
+        classButton = 'btn btn-danger';
+      }
+    }
+    let btnNumber = `<button data-secret="${secretData}" class="${classButton}" onClick="clickNumber(this)">${i}</button>`;
+    
     setTimeout(() => {
       $('.list-items').append(btnNumber);
     }, (25 / level) * i);
@@ -53,10 +66,10 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); 
 }
-function history(value) {
+function history(value,save = true) {
   $('.history div input:last-child').remove();
   $('.history div').prepend(`<input type="text" disabled="" class="form-control" value="${value}">`);
-  objSaveGame['historyNumber'].push(value);
+  if(save) objSaveGame['historyNumber'].push(value);
 }
 function reduceLife() {
   $('.life i:last-child').remove();
@@ -100,7 +113,6 @@ function showLeaderBoard() {
   $('#high-score table').html(xhtml);
 }
 function saveData(secretNumber,level = 1,life = 4,objSaveGame) {
-  if(lifeTime < 10) return;
   let data = {
     secretNumber: secretNumber,
     level : level,
@@ -195,4 +207,15 @@ function reset(){
     hintMessage: [],
     historyNumber: []
   };
+}
+function loadSaveGame(){
+  if(lifeTime > 10) return;
+  let data = JSON.parse(localStorage.getItem('setting'));
+  $('.slt-level').val(data['level']);
+  data['historyNumber'].map(value => {
+    history(value,false);
+  });
+  data['btnDanger'].map((element, index, array) => {
+    
+  });
 }
