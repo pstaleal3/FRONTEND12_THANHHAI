@@ -8,7 +8,6 @@ function showNumber(level = 1,objSaveGame) {
   console.log(secretNumber);
   let classButton;
   for(let i = 1; i <= maxNumber; i++) {
-    secretData = (secretNumber == i) ? true : false;
     classButton = 'btn btn-outline-dark';
     if(objSaveGame['btnWarning'].length > 0) {
       if(objSaveGame['btnWarning'].includes(i)) {
