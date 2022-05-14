@@ -5,7 +5,7 @@ function showNumber(level = 1,objSaveGame) {
   else if (level == 2) maxNumber = 50;
   else maxNumber = 100; 
   secretNumber = getRandomIntInclusive(1,maxNumber);
-  let secretData;
+  console.log(secretNumber);
   let classButton;
   for(let i = 1; i <= maxNumber; i++) {
     secretData = (secretNumber == i) ? true : false;
@@ -20,7 +20,7 @@ function showNumber(level = 1,objSaveGame) {
         classButton = 'btn btn-danger';
       }
     }
-    let btnNumber = `<button data-secret="${secretData}" class="${classButton}" onClick="clickNumber(this)">${i}</button>`;
+    let btnNumber = `<button class="${classButton}" onClick="clickNumber(this)">${i}</button>`;
     
     setTimeout(() => {
       $('.list-items').append(btnNumber);
@@ -33,7 +33,7 @@ function clickNumber(number) {
   $(number).css('border','none');
   history($(number).text());
   showHintMessage(secretNumber,$(number).text());
-  if($(number).data('secret')) {
+  if($(number).text() == secretNumber) {
     $(number).addClass("btn-success").removeClass("btn-outline-dark btn-warning");
     $('.list-items').addClass('disabled');
     $('.tool ul li:first-child a').addClass('disabled');
@@ -140,7 +140,7 @@ function hint(secretNum,level) {
   }
   firstNum = secretNum - firstNum;
   secondNum = secretNum + secondNum;
-  $('button[data-secret]').each(function(index,value) {
+  $('.list-items button').each(function(index,value) {
     if (index + 1 >= firstNum && index + 1 <=secondNum) {
       objSaveGame['btnWarning'].push(index + 1);
       setTimeout(() => {
@@ -149,6 +149,7 @@ function hint(secretNum,level) {
       }, 30 * (index + 1));
     }
   });
+  
 }
 function showHintRange(e) {
   let data = JSON.parse(localStorage.getItem('setting'));
@@ -157,7 +158,7 @@ function showHintRange(e) {
   saveData(secretNumber,data.level,life,objSaveGame);
   $.notify("Gợi ý!", "success");
 }
-function showHintMessage(secretNumber,ClickNumber){
+function showHintMessage(secretNumber,ClickNumber,save = true){
   let message = '';
   if (ClickNumber > secretNumber) {
     message = 'Số bạn chọn lớn hơn số bí mật';
@@ -173,8 +174,10 @@ function showHintMessage(secretNumber,ClickNumber){
 
   $('#all-hint-message .content-load:last-child').remove();
   $('#all-hint-message').prepend(xhtml);
-  objSaveGame['hintMessage'].push(message);
-  saveData(secretNumber,data.level,life,objSaveGame);
+  if(save) {
+    objSaveGame['hintMessage'].push(message);
+    saveData(secretNumber,data.level,life,objSaveGame);
+  }
 }
 function showSecretNumber(){
   let xhtml = `<h1>Số Bí Mật</h1>
@@ -214,8 +217,9 @@ function loadSaveGame(){
   $('.slt-level').val(data['level']);
   data['historyNumber'].map(value => {
     history(value,false);
+    showHintMessage(secretNumber,value,false);
   });
-  data['btnDanger'].map((element, index, array) => {
-    
-  });
+  for(let i = 1; i <= 4 - life; i++) {
+    reduceLife();
+  }
 }

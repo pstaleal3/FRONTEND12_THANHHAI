@@ -8,8 +8,8 @@ $(document).ready(function() {
     width: '100%',
     minimumResultsForSearch: -1 
   }).on('change', function() {
-    showNumber($(this).val(),objSaveGame);
     reset();
+    showNumber($(this).val(),objSaveGame);
     saveData(secretNumber,$(this).val(),life,objSaveGame);
   });
   $('#play-again').click(function() {
