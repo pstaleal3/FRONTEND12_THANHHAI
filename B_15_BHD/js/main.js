@@ -10,7 +10,10 @@ $(document).ready(function () {
   $('.move-down a').click(function(e) {
     e.preventDefault();
     $('html,body').animate({
-      
-      scrollTop: $('#movie').offset().top},'fast');
+    scrollTop: $('#movie').offset().top},'fast');
+  });
+  $('#movie #pills-home .swiper-slide').click(function() {
+    sessionStorage.setItem("movieID", $(this).data('id'));
+    window.location = 'movie.html';
   });
 });
