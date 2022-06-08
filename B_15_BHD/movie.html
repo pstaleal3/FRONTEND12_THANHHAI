@@ -41,7 +41,7 @@
         </nav>
         <a href="#" class="buy-ticket btn-header">MUA VÉ</a>
         <div class="logo">
-          <img src="./images/logo.png" alt="">
+          <a href="index.html"></a>
         </div>
         <div class="social">
           <ul class="d-flex ">
@@ -83,9 +83,7 @@
             <a href="#" class="btn-header mt-4 w-100 text-center">Đăng Ký Thành Viên</a>
           </form>
         </div>
-        <div class="line-header">
-          <img src="./images/line-header1.png" alt="">
-        </div>
+        <img src="./images/line-header1.png" alt="" class="img-fluid line-header">
       </div>
     </header>
     <section id="film-wrapper">
@@ -106,7 +104,7 @@
             </ul>
             <div>
               <a href="#" class="btn-green me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">XEM TRAILER</a>
-              <a href="#" class="btn-green"><i class="fas fa-ticket-alt"></i> MUA VÉ NGAY</a>
+              <a href="#mua-ve" class="btn-green"><i class="fas fa-ticket-alt"></i> MUA VÉ NGAY</a>
               
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
@@ -134,49 +132,76 @@
             <div class="swiper-button-prev color-white"></div>
           </div>
         </div>
-        <div class="showtime">
-          <div class="info">
-            <div class="p-3">
-              <h3>BHD Star 3.2</h3>
-              <p>Tang 5, Sieu Thi Vincom 3/2, 3C Duong 3/2, Quan 10,TP.HCM</p>
+        <div id="showtime-list">
+          <div class="showtime">
+            <div class="info">
+              <div class="p-3">
+                <h3>BHD Star 3.2</h3>
+                <p>Tang 5, Sieu Thi Vincom 3/2, 3C Duong 3/2, Quan 10,TP.HCM</p>
+              </div>
+              <a href="https://www.google.com/maps/search/Tang%205,%20Sieu%20Thi%20Vincom%203/2,%203C%20Duong%203/2,%20Quan%2010,TP.HCM?transaction_id=" class="btn-green" target="_blank">
+                <i class="fas fa-map-marker-alt px-3"></i>XEM VỊ TRÍ
+              </a>
             </div>
-            <a href="https://www.google.com/maps/search/Tang%205,%20Sieu%20Thi%20Vincom%203/2,%203C%20Duong%203/2,%20Quan%2010,TP.HCM?transaction_id=" class="btn-green" target="_blank">
-              <i class="fas fa-map-marker-alt px-3"></i>XEM VỊ TRÍ
-            </a>
+            <div class="film-content d-flex">
+              <div class="film-type">
+                <span>2D <br > SUB</span>
+                <span>P</span>
+              </div>
+              <ul class="film-time d-flex flex-wrap">
+                <li><a href="#">18:45</a></li>
+                <li><a href="#">19:30</a></li>
+                <li><a href="#">21:30</a></li>
+                <li><a href="#">22:00</a></li>
+                <li><a href="#">23:30</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="film-content d-flex">
-            <div class="film-type">
-              <span>2D <br > SUB</span>
-              <span>P</span>
+          <div class="showtime">
+            <div class="info">
+              <div class="p-3">
+                <h3>BHD Star Pham Hung</h3>
+                <p>Tang 4, TTTM Satra Pham Hung, C6/27 Pham Hung, Binh Chanh,TP.HCM</p>
+              </div>
+              <a href="https://www.google.com/maps/search/Tang%204,%20TTTM%20Satra%20Pham%20Hung,%20C6/27%20Pham%20Hung,%20Binh%20Chanh,TP.HCM?transaction_id=" class="btn-green" target="_blank">
+                <i class="fas fa-map-marker-alt px-3"></i>XEM VỊ TRÍ
+              </a>
             </div>
-            <ul class="film-time d-flex flex-wrap">
-              <li><a href="#">18:45</a></li>
-              <li><a href="#">19:30</a></li>
-              <li><a href="#">21:30</a></li>
-              <li><a href="#">22:00</a></li>
-              <li><a href="#">23:30</a></li>
-            </ul>
+            <div class="film-content d-flex">
+              <div class="film-type">
+                <span>2D <br > SUB</span>
+                <span>P</span>
+              </div>
+              <ul class="film-time d-flex flex-wrap">
+                <li><a href="#">20:40</a></li>
+                <li><a href="#">21:50</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="showtime">
-          <div class="info">
-            <div class="p-3">
-              <h3>BHD Star Pham Hung</h3>
-              <p>Tang 4, TTTM Satra Pham Hung, C6/27 Pham Hung, Binh Chanh,TP.HCM</p>
+          <div class="showtime">
+            <div class="info">
+              <div class="p-3">
+                <h3>BHD Star Quang Trung</h3>
+                <p>Tang B1&B2, TTTM Vincom,190 Quang Trung, Go Vap,TP.HCM</p>
+              </div>
+              <a href="https://www.google.com/maps/search/Tang%20B1&B2,%20TTTM%20Vincom,190%20Quang%20Trung,%20Go%20Vap,TP.HCM?transaction_id=" class="btn-green" target="_blank">
+                <i class="fas fa-map-marker-alt px-3"></i>XEM VỊ TRÍ
+              </a>
             </div>
-            <a href="https://www.google.com/maps/search/Tang%204,%20TTTM%20Satra%20Pham%20Hung,%20C6/27%20Pham%20Hung,%20Binh%20Chanh,TP.HCM?transaction_id=" class="btn-green" target="_blank">
-              <i class="fas fa-map-marker-alt px-3"></i>XEM VỊ TRÍ
-            </a>
-          </div>
-          <div class="film-content d-flex">
-            <div class="film-type">
-              <span>2D <br > SUB</span>
-              <span>P</span>
+            <div class="film-content d-flex">
+              <div class="film-type">
+                <span>2D <br > SUB</span>
+                <span>P</span>
+              </div>
+              <ul class="film-time d-flex flex-wrap">
+                <li><a href="#">14:45</a></li>
+                <li><a href="#">17:05</a></li>
+                <li><a href="#">17:55</a></li>
+                <li><a href="#">19:10</a></li>
+                <li><a href="#">21:25</a></li>
+                <li><a href="#">23:00</a></li>
+              </ul>
             </div>
-            <ul class="film-time d-flex flex-wrap">
-              <li><a href="#">20:40</a></li>
-              <li><a href="#">21:50</a></li>
-            </ul>
           </div>
         </div>
       </div>

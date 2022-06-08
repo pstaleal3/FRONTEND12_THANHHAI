@@ -238,7 +238,7 @@ header .line-header {
 #movie .swiper .swiper-button-next,#movie .swiper .swiper-button-prev {
   color: #fff;
 }
-#movie .swiper .swiper-button-next:after {
+#movie .swiper .swiper-button-next:after,#movie .swiper .swiper-button-prev:after {
   font-size: 30px;
   font-weight: bolder;
 }
